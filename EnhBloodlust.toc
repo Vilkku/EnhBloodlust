@@ -1,7 +1,8 @@
-## Interface: 50001
+## Interface: 60000
 ## Title: Enhanced Bloodlust
 ## Notes: Music when you gain Bloodlust or Heroism!
 ## Author: Vilkku
-## SavedVariables: EnhBloodlust_Status
 
+config.lua
+myconfig.lua
 EnhBloodlust.lua
