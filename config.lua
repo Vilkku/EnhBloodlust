@@ -18,6 +18,9 @@ config.sound = {
 }
 config.length = 40;
 
+-- Possible values are "Master", "SFX", "Ambience" and "Music".
+config.channel = "Master";
+
 --[[
 --Some other examples
 
