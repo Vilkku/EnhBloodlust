@@ -57,6 +57,10 @@ function EnhBloodlust:BLOODLUST()
 	   SetCVar("Sound_MusicVolume", 0.0);
     end
 
+    if (config.channel == nil) then
+        config.channel = "Master";
+    end
+
     for _,v in pairs(config.sound) do
         PlaySoundFile(v, config.channel);
     end

@@ -20,6 +20,9 @@ config.length = 40;
 config.channel = "Master";
 config.manage_music_volume = true;
 
+-- Possible values are "Master", "SFX", "Ambience" and "Music".
+config.channel = "Master";
+
 --[[
 --Some other examples
 
