@@ -17,6 +17,8 @@ config.sound = {
     "Interface\\AddOns\\EnhBloodlust\\bloodlust_short.mp3"
 }
 config.length = 40;
+config.channel = "Master";
+config.manage_music_volume = true;
 
 --[[
 --Some other examples

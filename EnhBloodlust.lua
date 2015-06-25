@@ -6,7 +6,7 @@ local UpdateSeconds, DelayTime, TrackLength, TrackPosition, MusicSetting, Volume
 EnhBloodlust:RegisterEvent("ADDON_LOADED")
 function EnhBloodlust:ADDON_LOADED(e, addon)
 	if addon:lower() ~= "enhbloodlust" then return end
-	
+
 	EnhBloodlust:RegisterEvent("PLAYER_REGEN_DISABLED");
 	EnhBloodlust:RegisterEvent("PLAYER_REGEN_ENABLED");
 
@@ -28,7 +28,7 @@ function EnhBloodlust:COMBAT_LOG_EVENT_UNFILTERED(e, timestamp, event, hideCaste
 		for _,v in pairs(config.spells) do
             if v == spellId then
                 EnhBloodlust:BLOODLUST();
-            end            
+            end
         end
 	end
 end
@@ -44,21 +44,25 @@ function EnhBloodlust:ON_UPDATE()
 		TrackPosition = (TrackPosition + UpdateSeconds);
  	  	if (TrackPosition >= TrackLength) then
 			EnhBloodlust:SetScript("OnUpdate", nil);
-			SetCVar("Sound_MusicVolume", Volume)
+            if (config.manage_music_volume) then
+                SetCVar("Sound_MusicVolume", Volume);
+            end
 		end
  	end
 end
 
 function EnhBloodlust:BLOODLUST()
-	Volume = tonumber(GetCVar("Sound_MusicVolume"))
-	SetCVar("Sound_MusicVolume", 0.0)
-	
-    for _,v in pairs(config.sound) do
-        PlaySoundFile(v);         
+	Volume = tonumber(GetCVar("Sound_MusicVolume"));
+    if (config.manage_music_volume) then
+	   SetCVar("Sound_MusicVolume", 0.0);
     end
-    
+
+    for _,v in pairs(config.sound) do
+        PlaySoundFile(v, config.channel);
+    end
+
     TrackLength = config.length;
-    	
+
 	DelayTime, TrackPosition = 0, -1;
-	EnhBloodlust:SetScript("OnUpdate", function() EnhBloodlust:ON_UPDATE(); end)
+	EnhBloodlust:SetScript("OnUpdate", function() EnhBloodlust:ON_UPDATE(); end);
 end
