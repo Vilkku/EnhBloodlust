@@ -1,4 +1,4 @@
-## Interface: 60200
+## Interface: 70100
 ## Title: Enhanced Bloodlust
 ## Notes: Music when you gain Bloodlust or Heroism!
 ## Author: Vilkku

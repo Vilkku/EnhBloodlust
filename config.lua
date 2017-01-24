@@ -9,8 +9,8 @@ EnhBloodlustConfig = {};
 
 local config = EnhBloodlustConfig;
 
--- Bloodlust, Heroism, Time Warp, Ancient Hysteria
-config.spells = {2825, 32182, 80353, 90355}
+-- Bloodlust, Heroism, Time Warp, Ancient Hysteria (Core Hound), Netherwinds (Nether Ray)
+config.spells = {2825, 32182, 80353, 90355, 160452}
 
 config.sound = {
     "Interface\\AddOns\\EnhBloodlust\\bloodlust_mid.mp3",
